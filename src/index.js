@@ -11,4 +11,4 @@ app.use(express.json());
 
 routes(app)
 
-app.listen(3001, () => console.log("server is runing"));
+app.listen(3002, () => console.log("server is runing"));

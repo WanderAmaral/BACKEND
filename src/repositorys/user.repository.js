@@ -39,3 +39,31 @@ export const userById = async (id) => {
   });
   return idUser;
 };
+
+export const updateUser = async (id, data) => {
+  const user = await prisma.user.update({
+    where: {
+      id,
+    },
+    data,
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      password: false,
+      phone: true,
+      createdAt: true,
+      updateAt: true,
+    },
+  });
+  return user;
+};
+
+export const userDelete = async (id) => {
+  await prisma.user.delete({
+    where: {
+      id,
+    },
+  });
+  return
+};
