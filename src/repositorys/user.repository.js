@@ -45,7 +45,11 @@ export const updateUser = async (id, data) => {
     where: {
       id,
     },
-    data,
+    data: {
+      name: data.name,
+      email: data.email,
+      password: data.password
+    },
     select: {
       id: true,
       name: true,
